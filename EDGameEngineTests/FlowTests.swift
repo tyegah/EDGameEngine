@@ -47,6 +47,16 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestion, "Q2")
     }
     
+    
+    // After we successfully test the router results for only one question,
+    // now we need to test with two questions and see if it will route correctly to the first question
+    func test_start_twoQuestions_routesToFirstQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(questions:["Q1", "Q2"], router:router)
+        sut.start()
+        XCTAssertEqual(router.routedQuestion, "Q1")
+    }
+    
     // Spy is the object and you just spying or stubbing specific methods of it.
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
