@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0DB0E463281C3FCD004A25B2 /* EDGameEngine.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */; };
 		0DB0E469281C3FCD004A25B2 /* EDGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */; };
-		0DB0E46E281C3FCD004A25B2 /* EDGameEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E46D281C3FCD004A25B2 /* EDGameEngineTests.swift */; };
-		0DB0E46F281C3FCD004A25B2 /* EDGameEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB0E461281C3FCD004A25B2 /* EDGameEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DB0E479281C4098004A25B2 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E478281C4098004A25B2 /* FlowTests.swift */; };
+		0DB0E47B281C42CA004A25B2 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E47A281C42CA004A25B2 /* Flow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +25,10 @@
 
 /* Begin PBXFileReference section */
 		0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDGameEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DB0E461281C3FCD004A25B2 /* EDGameEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDGameEngine.h; sourceTree = "<group>"; };
 		0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EDGameEngine.docc; sourceTree = "<group>"; };
 		0DB0E468281C3FCD004A25B2 /* EDGameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDGameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DB0E46D281C3FCD004A25B2 /* EDGameEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDGameEngineTests.swift; sourceTree = "<group>"; };
+		0DB0E478281C4098004A25B2 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
+		0DB0E47A281C42CA004A25B2 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		0DB0E460281C3FCD004A25B2 /* EDGameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				0DB0E461281C3FCD004A25B2 /* EDGameEngine.h */,
 				0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */,
+				0DB0E47A281C42CA004A25B2 /* Flow.swift */,
 			);
 			path = EDGameEngine;
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 		0DB0E46C281C3FCD004A25B2 /* EDGameEngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				0DB0E46D281C3FCD004A25B2 /* EDGameEngineTests.swift */,
+				0DB0E478281C4098004A25B2 /* FlowTests.swift */,
 			);
 			path = EDGameEngineTests;
 			sourceTree = "<group>";
@@ -92,7 +92,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB0E46F281C3FCD004A25B2 /* EDGameEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +149,7 @@
 					};
 					0DB0E467281C3FCD004A25B2 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -195,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB0E463281C3FCD004A25B2 /* EDGameEngine.docc in Sources */,
+				0DB0E47B281C42CA004A25B2 /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB0E46E281C3FCD004A25B2 /* EDGameEngineTests.swift in Sources */,
+				0DB0E479281C4098004A25B2 /* FlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,14 +398,22 @@
 		0DB0E476281C3FCD004A25B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3AMS94597U;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyegah.EDGameEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -412,10 +421,17 @@
 		0DB0E477281C3FCD004A25B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3AMS94597U;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyegah.EDGameEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
