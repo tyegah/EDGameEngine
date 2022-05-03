@@ -20,7 +20,7 @@ class FlowTests:XCTestCase {
         let router = RouterSpy()
         let sut = Flow(questions:[], router:router)
         sut.start()
-        XCTAssertEqual(router.routedQuestionsCount, 0)
+        XCTAssertTrue(router.routedQuestions.isEmpty)
     }
     
     // Because we need a question here, we can start injecting the question into the Flow
@@ -62,9 +62,11 @@ class FlowTests:XCTestCase {
     class RouterSpy:Router {
         var routedQuestionsCount:Int = 0
         var routedQuestion:String? = nil
+        var routedQuestions:[String] = []
         func routeTo(question: String) {
             routedQuestionsCount += 1
             routedQuestion = question
+            routedQuestions.append(question)
         }
     }
 }
