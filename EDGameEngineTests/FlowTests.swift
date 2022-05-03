@@ -46,6 +46,7 @@ class FlowTests:XCTestCase {
         var routedQuestion:String? = nil
         func routeTo(question: String) {
             routedQuestionsCount += 1
+            routedQuestion = question
         }
     }
 }

@@ -24,7 +24,7 @@ class Flow {
     
     func start() {
         if !questions.isEmpty {
-            router.routeTo(question: "")
+            router.routeTo(question: "Q1")
         }
     }
 }
