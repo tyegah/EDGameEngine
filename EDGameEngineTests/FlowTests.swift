@@ -69,7 +69,7 @@ class FlowTests:XCTestCase {
     // Here we need to test if the Flow with two questions is started, routed to the 1st question and answered, it will route to the 2nd question.
     // Because of this, we need a way to capture the answer behavior inside the spy
     // Thus, we're adding answer callback closure on the router protocol
-    func test_startAndAnswerFirstQuestion_withTwoQuestions_routesToSecondQuestionTwice() {
+    func test_startAndAnswerFirstQuestion_withTwoQuestions_routesToSecondQuestion() {
         let router = RouterSpy()
         let sut = Flow(questions:["Q1", "Q2"], router:router)
         sut.start()
