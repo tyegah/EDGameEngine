@@ -24,19 +24,19 @@ class FlowTests:XCTestCase {
     }
     
     // Because we need a question here, we can start injecting the question into the Flow
-    func test_start_oneQuestion_routesToQuestion() {
-        let router = RouterSpy()
-        let sut = Flow(questions:["Q1"], router:router)
-        sut.start()
-        XCTAssertEqual(router.routedQuestions, ["Q1"])
-    }
-    
+//    func test_start_oneQuestion_routesToQuestion() {
+//        let router = RouterSpy()
+//        let sut = Flow(questions:["Q1"], router:router)
+//        sut.start()
+//        XCTAssertEqual(router.routedQuestions, ["Q1"])
+//    }
+//
     // After the routing is successful on the 2nd test, we need to check if the routing gives the correct answer
     func test_start_oneQuestion_routesToCorrectQuestion() {
         let router = RouterSpy()
         let sut = Flow(questions:["Q1"], router:router)
         sut.start()
-        XCTAssertEqual(router.routedQuestion, "Q1")
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     // After the first correct question routed, we need to check if a different question will still give the correct result
