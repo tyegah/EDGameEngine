@@ -44,7 +44,7 @@ class FlowTests:XCTestCase {
         let router = RouterSpy()
         let sut = Flow(questions:["Q2"], router:router)
         sut.start()
-        XCTAssertEqual(router.routedQuestion, "Q2")
+        XCTAssertEqual(router.routedQuestions, ["Q2"])
     }
     
     
