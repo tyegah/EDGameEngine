@@ -35,5 +35,9 @@ class FlowTests:XCTestCase {
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
         var routedQuestionsCount:Int = 0
+        
+        func routeTo(question: String) {
+            routedQuestionsCount += 1
+        }
     }
 }

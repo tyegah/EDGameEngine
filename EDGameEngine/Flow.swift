@@ -7,8 +7,11 @@
 
 import Foundation
 
+// This router is responsible for routing/navigating between questions
+// For example, if it's storyboards, we can implement it in StoryboardRouter,
+// if it's navigation controller, it can be NavigationControllerRouter
 protocol Router {
-    
+    func routeTo(question:String)
 }
 // we make this as a class because it has a behaviour and not just values
 class Flow {
@@ -20,6 +23,6 @@ class Flow {
     }
     
     func start() {
-        
+        router.routeTo(question: "")
     }
 }
