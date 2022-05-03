@@ -11,7 +11,7 @@ import Foundation
 // For example, if it's storyboards, we can implement it in StoryboardRouter,
 // if it's navigation controller, it can be NavigationControllerRouter
 protocol Router {
-    func routeTo(question:String)
+    func routeTo(question:String, answerCallback: @escaping (String) -> Void)
 }
 // we make this as a class because it has a behaviour and not just values
 class Flow {
@@ -24,7 +24,9 @@ class Flow {
     
     func start() {
         if let firstQuestion = questions.first {
-            router.routeTo(question: firstQuestion)
+            router.routeTo(question: firstQuestion) { _ in
+                
+            }
         }
     }
 }

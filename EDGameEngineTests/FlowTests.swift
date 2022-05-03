@@ -57,6 +57,7 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
+    // If the router is being started twice, the question routed should also be the same twice
     func test_startTwice_twoQuestions_routesToFirstQuestionTwice() {
         let router = RouterSpy()
         let sut = Flow(questions:["Q1", "Q2"], router:router)
@@ -65,12 +66,25 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q1"])
     }
     
+    // Here we need to test if the Flow with two questions is started, routed to the 1st question and answered, it will route to the 2nd question.
+    // Because of this, we need a way to capture the answer behavior inside the spy
+    // Thus, we're adding answer callback closure on the router protocol
+    func test_startAndAnswerFirstQuestion_withTwoQuestions_routesToSecondQuestionTwice() {
+        let router = RouterSpy()
+        let sut = Flow(questions:["Q1", "Q2"], router:router)
+        sut.start()
+        router.answerCallback("A1")
+        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
+    }
+    
     // Spy is the object and you just spying or stubbing specific methods of it.
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
         var routedQuestions:[String] = []
-        func routeTo(question: String) {
+        var answerCallback: ((String) -> Void) = { _ in }
+        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
             routedQuestions.append(question)
+            self.answerCallback = answerCallback
         }
     }
 }
