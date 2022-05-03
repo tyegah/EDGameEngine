@@ -18,7 +18,7 @@ class FlowTests:XCTestCase {
     // In this stage, we also don't know what the result would look like
     func test_start_withNoQuestions_doesNotRouteToQuestion() {
         let router = RouterSpy()
-        let sut = Flow(router:router)
+        let sut = Flow(questions:[], router:router)
         sut.start()
         XCTAssertEqual(router.routedQuestionsCount, 0)
     }
@@ -26,9 +26,9 @@ class FlowTests:XCTestCase {
     // Because we need a question here, we can start injecting the question into the Flow
     func test_start_oneQuestion_routesToQuestion() {
         let router = RouterSpy()
-        let sut = Flow(router:router)
+        let sut = Flow(questions:["Q1"], router:router)
         sut.start()
-        XCTAssertEqual(router.routedQuestionsCount, 0)
+        XCTAssertEqual(router.routedQuestionsCount, 1)
     }
     
     // Spy is the object and you just spying or stubbing specific methods of it.
