@@ -16,7 +16,15 @@ class FlowTests:XCTestCase {
     // or whoever is responsible for the presentation logic
     // in this case, the router will be responsible for routing the result
     // In this stage, we also don't know what the result would look like
-    func test_start_withNoQuestions_() {
+    func test_start_withNoQuestions_doesNotRouteToQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(router:router)
+        sut.start()
+        XCTAssertEqual(router.routedQuestionsCount, 0)
+    }
+    
+    // Because we need a question here, we can start injecting the question into the Flow
+    func test_start_oneQuestion_routesToQuestion() {
         let router = RouterSpy()
         let sut = Flow(router:router)
         sut.start()

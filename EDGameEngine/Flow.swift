@@ -13,8 +13,10 @@ protocol Router {
 // we make this as a class because it has a behaviour and not just values
 class Flow {
     private let router:Router
-    init(router:Router) {
+    let questions:[String]
+    init(questions: [String], router:Router) {
         self.router = router
+        self.questions = questions
     }
     
     func start() {
