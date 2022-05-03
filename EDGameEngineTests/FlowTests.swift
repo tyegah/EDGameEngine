@@ -62,8 +62,6 @@ class FlowTests:XCTestCase {
     class RouterSpy:Router {
         var routedQuestions:[String] = []
         func routeTo(question: String) {
-            routedQuestionsCount += 1
-            routedQuestion = question
             routedQuestions.append(question)
         }
     }
