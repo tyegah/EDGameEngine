@@ -28,7 +28,7 @@ class FlowTests:XCTestCase {
         let router = RouterSpy()
         let sut = Flow(questions:["Q1"], router:router)
         sut.start()
-        XCTAssertEqual(router.routedQuestionsCount, 1)
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     // After the routing is successful on the 2nd test, we need to check if the routing gives the correct answer
