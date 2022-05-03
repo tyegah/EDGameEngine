@@ -57,6 +57,14 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
+    func test_startTwice_twoQuestions_routesToFirstQuestionTwice() {
+        let router = RouterSpy()
+        let sut = Flow(questions:["Q1", "Q2"], router:router)
+        sut.start()
+        sut.start()
+        XCTAssertEqual(router.routedQuestions, ["Q1", "Q1"])
+    }
+    
     // Spy is the object and you just spying or stubbing specific methods of it.
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
