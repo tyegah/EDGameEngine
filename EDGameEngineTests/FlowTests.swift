@@ -69,6 +69,15 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
     }
     
+    // Here we need to test if the Flow with three questions is started, routed to the 1st question and answered, it will route to the 2nd question. And then 2nd question is answered, it will route to the 3rd question.
+    func test_startAndAnswerFirstAndSecondQuestion_withThreeQuestions_routesToSecondAndThirdQuestion() {
+        let sut = makeSUT(questions: ["Q1", "Q2", "Q3"])
+        sut.start()
+        router.answerCallback("A1")
+        router.answerCallback("A2")
+        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2", "Q3"])
+    }
+    
     
     // MARK: - Helper
     
