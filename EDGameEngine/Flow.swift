@@ -11,7 +11,8 @@ import Foundation
 // For example, if it's storyboards, we can implement it in StoryboardRouter,
 // if it's navigation controller, it can be NavigationControllerRouter
 protocol Router {
-    func routeTo(question:String, answerCallback: @escaping (String) -> Void)
+    typealias AnswerCallback = (String) -> Void
+    func routeTo(question:String, answerCallback: @escaping AnswerCallback)
 }
 // we make this as a class because it has a behaviour and not just values
 class Flow {
@@ -28,7 +29,7 @@ class Flow {
         }
     }
     
-    func routeNext(question:String) -> ((String) -> Void) {
+    func routeNext(question:String) -> Router.AnswerCallback {
         return {[weak self] _ in
             guard let self = self else {return}
             let currentQuestionIndex = self.questions.firstIndex(of: question)!

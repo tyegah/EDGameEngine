@@ -90,8 +90,8 @@ class FlowTests:XCTestCase {
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
         var routedQuestions:[String] = []
-        var answerCallback: ((String) -> Void) = { _ in }
-        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
+        var answerCallback: Router.AnswerCallback = { _ in }
+        func routeTo(question: String, answerCallback: @escaping Router.AnswerCallback) {
             routedQuestions.append(question)
             self.answerCallback = answerCallback
         }
