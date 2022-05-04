@@ -79,6 +79,15 @@ class FlowTests:XCTestCase {
     }
     
     
+    // Because previously, we didn't take care of the cases where there's only one question and if it's answered, it shouldn't go anywhere else
+    // We need to check if the range of the questions are safely handled
+    func test_startAndAnswerFirstQuestion_withOneQuestion_doesNotRouteToAnotherQuestion() {
+        let sut = makeSUT(questions: ["Q1"])
+        sut.start()
+        router.answerCallback("A1")
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
+    }
+    
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
