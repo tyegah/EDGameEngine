@@ -17,7 +17,7 @@ protocol Router {
 // we make this as a class because it has a behaviour and not just values
 class Flow {
     private let router:Router
-    let questions:[String]
+    private let questions:[String]
     init(questions: [String], router:Router) {
         self.router = router
         self.questions = questions
@@ -25,17 +25,18 @@ class Flow {
     
     func start() {
         if let firstQuestion = questions.first {
-            router.routeTo(question: firstQuestion, answerCallback: routeNext(question: firstQuestion))
+            router.routeTo(question: firstQuestion, answerCallback: routeNext(from: firstQuestion))
         }
     }
     
-    func routeNext(question:String) -> Router.AnswerCallback {
+    private func routeNext(from question:String) -> Router.AnswerCallback {
         return {[weak self] _ in
             guard let self = self else {return}
-            let currentQuestionIndex = self.questions.firstIndex(of: question)!
-            if currentQuestionIndex+1 < self.questions.count {
-                let nextQuestion = self.questions[currentQuestionIndex+1]
-                self.router.routeTo(question: nextQuestion, answerCallback: self.routeNext(question: nextQuestion))
+            if let currentQuestionIndex = self.questions.firstIndex(of: question) {
+                if currentQuestionIndex+1 < self.questions.count {
+                    let nextQuestion = self.questions[currentQuestionIndex+1]
+                    self.router.routeTo(question: nextQuestion, answerCallback: self.routeNext(from: nextQuestion))
+                }
             }
         }
     }

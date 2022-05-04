@@ -62,12 +62,14 @@ class FlowTests:XCTestCase {
     // Here we need to test if the Flow with two questions is started, routed to the 1st question and answered, it will route to the 2nd question.
     // Because of this, we need a way to capture the answer behavior inside the spy
     // Thus, we're adding answer callback closure on the router protocol
-    func test_startAndAnswerFirstQuestion_withTwoQuestions_routesToSecondQuestion() {
-        let sut = makeSUT(questions: ["Q1", "Q2"])
-        sut.start()
-        router.answerCallback("A1")
-        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
-    }
+    
+    // Note: This is not needed anymore because the case with 3 questions already covered this case
+//    func test_startAndAnswerFirstQuestion_withTwoQuestions_routesToSecondQuestion() {
+//        let sut = makeSUT(questions: ["Q1", "Q2"])
+//        sut.start()
+//        router.answerCallback("A1")
+//        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
+//    }
     
     // Here we need to test if the Flow with three questions is started, routed to the 1st question and answered, it will route to the 2nd question. And then 2nd question is answered, it will route to the 3rd question.
     func test_startAndAnswerFirstAndSecondQuestion_withThreeQuestions_routesToSecondAndThirdQuestion() {
