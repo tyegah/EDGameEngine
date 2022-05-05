@@ -30,7 +30,7 @@ class Flow {
             router.routeTo(question: firstQuestion, answerCallback: routeNext(from: firstQuestion))
         }
         else {
-            router.routeTo(result: [:])
+            router.routeTo(result: result)
         }
     }
     

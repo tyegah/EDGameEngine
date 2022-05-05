@@ -99,12 +99,12 @@ class FlowTests:XCTestCase {
     
     // Check if there's only one question and it is answered,
     // it will route to the result
-    func test_startAndAnswerFirstQuestion_withOneQuestion_routesToResult() {
-        let sut = makeSUT(questions: ["Q1"])
-        sut.start()
-        router.answerCallback("A1")
-        XCTAssertEqual(router.routedResult, ["Q1":"A1"])
-    }
+//    func test_startAndAnswerFirstQuestion_withOneQuestion_routesToResult() {
+//        let sut = makeSUT(questions: ["Q1"])
+//        sut.start()
+//        router.answerCallback("A1")
+//        XCTAssertEqual(router.routedResult, ["Q1":"A1"])
+//    }
     
     // Check if there are 2 questions and both are answered,
     // it will route to result
