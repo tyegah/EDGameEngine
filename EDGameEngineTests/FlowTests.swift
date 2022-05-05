@@ -97,6 +97,15 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedResult, [:])
     }
     
+    // Check if there's only one question and it is answered,
+    // it will route to the result
+    func test_startAndAnswerFirstQuestion_withOneQuestion_routesToResult() {
+        let sut = makeSUT(questions: ["Q1"])
+        sut.start()
+        router.answerCallback("A1")
+        XCTAssertEqual(router.routedResult, ["Q1":"A1"])
+    }
+    
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
