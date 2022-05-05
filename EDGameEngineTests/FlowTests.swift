@@ -106,6 +106,16 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedResult, ["Q1":"A1"])
     }
     
+    // Check if there are 2 questions and both are answered,
+    // it will route to result
+    func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_routesToResult() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        router.answerCallback("A1")
+        router.answerCallback("A2")
+        XCTAssertEqual(router.routedResult, ["Q1":"A1","Q2":"A2"])
+    }
+    
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
