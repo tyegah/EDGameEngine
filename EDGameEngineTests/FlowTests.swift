@@ -97,6 +97,14 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedResult, [:])
     }
     
+    // This is an additional case found where if there's only one question, it shouldn't route to result if it's not answered
+    // This case if found by commenting out each line on the Flow class to see if there's a failing test
+    // Or by moving a function outside of the if-else block and see if the test are still passing and not failing
+    func test_start_withOneQuestions_doesNotRouteToResult() {
+        makeSUT(questions: ["Q1"]).start()
+        XCTAssertNil(router.routedResult)
+    }
+    
     // Check if there's only one question and it is answered,
     // it will route to the result
 //    func test_startAndAnswerFirstQuestion_withOneQuestion_routesToResult() {
@@ -105,6 +113,15 @@ class FlowTests:XCTestCase {
 //        router.answerCallback("A1")
 //        XCTAssertEqual(router.routedResult, ["Q1":"A1"])
 //    }
+    
+    // Check if there are 2 questions and only one is answered
+    // it will not route to result
+    func test_startAndAnswerFirstQuestion_withTwoQuestions_doesNotRouteToResult() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        router.answerCallback("A1")
+        XCTAssertNil(router.routedResult)
+    }
     
     // Check if there are 2 questions and both are answered,
     // it will route to result
