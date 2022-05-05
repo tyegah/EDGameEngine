@@ -90,6 +90,13 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
+    // Now we have added the routeTo(result:) at the router protocol
+    // We need to check if there's no question, it will be routed to result
+    func test_start_withNoQuestions_routesToResult() {
+        makeSUT(questions: []).start()
+        XCTAssertEqual(router.routedResult, [:])
+    }
+    
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
@@ -102,9 +109,14 @@ class FlowTests:XCTestCase {
     class RouterSpy:Router {
         var routedQuestions:[String] = []
         var answerCallback: Router.AnswerCallback = { _ in }
+        var routedResult:[String:String]? = nil
         func routeTo(question: String, answerCallback: @escaping Router.AnswerCallback) {
             routedQuestions.append(question)
             self.answerCallback = answerCallback
+        }
+        
+        func routeTo(result: [String : String]) {
+            self.routedResult = result
         }
     }
 }
