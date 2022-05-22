@@ -32,4 +32,12 @@ class GameTests:XCTestCase {
         router.answerCallback("wrong answer")
         XCTAssertEqual(router.routedResult!.score, 0)
     }
+    
+    func test_startGame_answerZeroOutOfTwoCorrectly_scoresTwo() {
+        let router = RouterSpy()
+        game = startGame(questions: ["Q1", "Q2"], router: router, correctAnswers: ["Q1":"A1", "Q2":"A2"])
+        router.answerCallback("A1")
+        router.answerCallback("A2")
+        XCTAssertEqual(router.routedResult!.score, 2)
+    }
 }
