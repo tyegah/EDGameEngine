@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import EDGameEngine
+import EDGameEngine // We dont need @testable because we want to make it public for the integration test
 
 class GameTests:XCTestCase {
     // Here we want to start testing if the game scoring function is running correctly,
