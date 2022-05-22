@@ -133,6 +133,17 @@ class FlowTests:XCTestCase {
         XCTAssertEqual(router.routedResult!.answers, ["Q1":"A1","Q2":"A2"])
     }
     
+    // Because we're about to add the scoring functionality,
+    // we create test for the router routeTo method to return score
+    // after we finish answering all the questions
+    func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_scores() {
+        let sut = makeSUT(questions: ["Q1", "Q2"], scoring: { _ in 10})
+        sut.start()
+        router.answerCallback("A1")
+        router.answerCallback("A2")
+        XCTAssertEqual(router.routedResult!.score, 10)
+    }
+    
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests

@@ -64,7 +64,7 @@ class Flow <Question, Answer, R:Router> where R.Question == Question, R.Answer =
     }
     
     private func result() -> Result<Question,Answer> {
-        return  Result(answers: answers)
+        return  Result(answers: answers, score: 0)
     }
 }
 
@@ -76,6 +76,7 @@ class Flow <Question, Answer, R:Router> where R.Question == Question, R.Answer =
 struct Result<Question:Hashable, Answer> {
     // At first we create this first to change the router's protocol "routeTo" with the struct Result
     let answers:[Question:Answer]
+    let score:Int
 }
 
 
