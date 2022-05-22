@@ -23,9 +23,13 @@ class Flow <Question, Answer, R:Router> where R.Question == Question, R.Answer =
     private let router:R
     private let questions:[Question]
     private var answers:[Question:Answer] = [:]
-    init(questions: [Question], router:R) {
+    // We need a way to calculate the score, but because the calculate score is not the responsibility of the Flow class
+    // So we inject a simple function into the flow to calculate score
+    private var scoring: ([Question:Answer]) -> Int
+    init(questions: [Question], router:R, scoring: @escaping ([Question:Answer]) -> Int) {
         self.router = router
         self.questions = questions
+        self.scoring = scoring
     }
     
     func start() {
