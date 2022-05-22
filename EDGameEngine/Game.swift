@@ -16,7 +16,7 @@ public class Game<Question, Answer:Equatable, R:Router> where R.Question == Ques
 }
 
 public func startGame<Question, Answer:Equatable, R:Router>(questions:[Question], router: R, answers:[Question:Answer]) -> Game<Question, Answer, R> where R.Question == Question, R.Answer == Answer {
-    let flow = Flow(questions: questions, router: router, scoring: { _ in 0})
+    let flow = Flow(questions: questions, router: router, scoring: { _ in 1})
     flow.start() // at this point, the GameTests will crash because the flow is instantiated and removed right away from memory without anything holding it
     // And that is why we should create something that holds the flow variable without exposing it's methods and stuff
     return Game(flow: flow)
