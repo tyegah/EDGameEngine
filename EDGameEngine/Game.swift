@@ -23,5 +23,8 @@ public func startGame<Question, Answer:Equatable, R:Router>(questions:[Question]
 }
 
 private func scoring<Question:Hashable, Answer:Equatable>(_ answers:[Question:Answer], correctAnswers:[Question:Answer]) -> Int {
-    return 1
+    return answers.reduce(0) { (score, arg1) in
+        let (question, answer) = arg1
+        return score + (correctAnswers[question] == answer ? 1 : 0)
+    }
 }
