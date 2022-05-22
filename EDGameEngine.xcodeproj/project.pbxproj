@@ -11,6 +11,8 @@
 		0DB0E469281C3FCD004A25B2 /* EDGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */; };
 		0DB0E479281C4098004A25B2 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E478281C4098004A25B2 /* FlowTests.swift */; };
 		0DB0E47B281C42CA004A25B2 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E47A281C42CA004A25B2 /* Flow.swift */; };
+		0DDE0400283A967D0049C626 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE03FF283A967D0049C626 /* Router.swift */; };
+		0DDE0402283A96910049C626 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE0401283A96910049C626 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		0DB0E468281C3FCD004A25B2 /* EDGameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDGameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB0E478281C4098004A25B2 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		0DB0E47A281C42CA004A25B2 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		0DDE03FF283A967D0049C626 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0DDE0401283A96910049C626 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */,
 				0DB0E47A281C42CA004A25B2 /* Flow.swift */,
+				0DDE0401283A96910049C626 /* Result.swift */,
+				0DDE03FF283A967D0049C626 /* Router.swift */,
 			);
 			path = EDGameEngine;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB0E463281C3FCD004A25B2 /* EDGameEngine.docc in Sources */,
+				0DDE0400283A967D0049C626 /* Router.swift in Sources */,
+				0DDE0402283A96910049C626 /* Result.swift in Sources */,
 				0DB0E47B281C42CA004A25B2 /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
