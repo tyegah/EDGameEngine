@@ -94,7 +94,7 @@ class FlowTests:XCTestCase {
     // We need to check if there's no question, it will be routed to result
     func test_start_withNoQuestions_routesToResult() {
         makeSUT(questions: []).start()
-        XCTAssertEqual(router.routedResult, [:])
+        XCTAssertEqual(router.routedResult!.answers, [:])
     }
     
     // This is an additional case found where if there's only one question, it shouldn't route to result if it's not answered
@@ -130,13 +130,13 @@ class FlowTests:XCTestCase {
         sut.start()
         router.answerCallback("A1")
         router.answerCallback("A2")
-        XCTAssertEqual(router.routedResult, ["Q1":"A1","Q2":"A2"])
+        XCTAssertEqual(router.routedResult!.answers, ["Q1":"A1","Q2":"A2"])
     }
     
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
-    func makeSUT(questions:[String]) -> Flow {
+    func makeSUT(questions:[String]) -> Flow<String, String, RouterSpy> {
         return Flow(questions:questions, router:router)
     }
     
@@ -144,14 +144,14 @@ class FlowTests:XCTestCase {
     // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
     class RouterSpy:Router {
         var routedQuestions:[String] = []
-        var answerCallback: Router.AnswerCallback = { _ in }
-        var routedResult:[String:String]? = nil
-        func routeTo(question: String, answerCallback: @escaping Router.AnswerCallback) {
+        var answerCallback: (String) -> Void = { _ in }
+        var routedResult:Result<String,String>? = nil
+        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
             routedQuestions.append(question)
             self.answerCallback = answerCallback
         }
         
-        func routeTo(result: [String : String]) {
+        func routeTo(result: Result<String,String>) {
             self.routedResult = result
         }
     }
