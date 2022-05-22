@@ -13,6 +13,6 @@ import Foundation
 
 public struct Result<Question:Hashable, Answer> {
     // At first we create this first to change the router's protocol "routeTo" with the struct Result
-    let answers:[Question:Answer]
-    let score:Int
+    public let answers:[Question:Answer]
+    public let score:Int
 }

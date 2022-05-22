@@ -5,7 +5,7 @@
 //  Created by Ty Septiani on 22/05/22.
 //
 
-@testable import EDGameEngine
+import EDGameEngine
 
 // Spy is the object and you just spying or stubbing specific methods of it.
 // While in spy objects, of course, since it is a real method, when you are not stubbing the method, then it will call the real method behavior
