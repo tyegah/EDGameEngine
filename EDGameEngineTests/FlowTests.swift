@@ -136,8 +136,8 @@ class FlowTests:XCTestCase {
     // MARK: - Helper
     
     // By doing this, we can change the initializer without breaking the tests
-    func makeSUT(questions:[String]) -> Flow<String, String, RouterSpy> {
-        return Flow(questions:questions, router:router) { _ in return 0}
+    func makeSUT(questions:[String], scoring: @escaping ([String:String]) -> Int = { _ in 0}) -> Flow<String, String, RouterSpy> {
+        return Flow(questions:questions, router:router, scoring: scoring)
     }
     
     // Spy is the object and you just spying or stubbing specific methods of it.
