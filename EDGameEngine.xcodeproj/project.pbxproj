@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6040592841428E00ED683A /* EDGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D60404F2841428D00ED683A /* EDGameEngine.framework */; };
+		0D6040692841440800ED683A /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE0403283A97040049C626 /* GameTests.swift */; };
+		0D60406A2841440800ED683A /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE0407283A98EB0049C626 /* RouterSpy.swift */; };
+		0D60406B2841440800ED683A /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E478281C4098004A25B2 /* FlowTests.swift */; };
+		0D60406C2841441800ED683A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE03FF283A967D0049C626 /* Router.swift */; };
+		0D60406D2841441800ED683A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE0405283A984E0049C626 /* Game.swift */; };
+		0D60406E2841441800ED683A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE0401283A96910049C626 /* Result.swift */; };
+		0D60406F2841441800ED683A /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E47A281C42CA004A25B2 /* Flow.swift */; };
 		0DB0E463281C3FCD004A25B2 /* EDGameEngine.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */; };
 		0DB0E469281C3FCD004A25B2 /* EDGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */; };
 		0DB0E479281C4098004A25B2 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0E478281C4098004A25B2 /* FlowTests.swift */; };
@@ -19,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D60405A2841428E00ED683A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB0E455281C3FCD004A25B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D60404E2841428D00ED683A;
+			remoteInfo = EDGameEngine_iOS;
+		};
 		0DB0E46A281C3FCD004A25B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DB0E455281C3FCD004A25B2 /* Project object */;
@@ -29,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D60404F2841428D00ED683A /* EDGameEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDGameEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D6040582841428E00ED683A /* EDGameEngine_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDGameEngine_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDGameEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB0E462281C3FCD004A25B2 /* EDGameEngine.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EDGameEngine.docc; sourceTree = "<group>"; };
 		0DB0E468281C3FCD004A25B2 /* EDGameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDGameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +59,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D60404C2841428D00ED683A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6040552841428E00ED683A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D6040592841428E00ED683A /* EDGameEngine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB0E45B281C3FCD004A25B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +106,8 @@
 			children = (
 				0DB0E45E281C3FCD004A25B2 /* EDGameEngine.framework */,
 				0DB0E468281C3FCD004A25B2 /* EDGameEngineTests.xctest */,
+				0D60404F2841428D00ED683A /* EDGameEngine.framework */,
+				0D6040582841428E00ED683A /* EDGameEngine_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +137,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0D60404A2841428D00ED683A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB0E459281C3FCD004A25B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +154,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0D60404E2841428D00ED683A /* EDGameEngine_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D6040642841428E00ED683A /* Build configuration list for PBXNativeTarget "EDGameEngine_iOS" */;
+			buildPhases = (
+				0D60404A2841428D00ED683A /* Headers */,
+				0D60404B2841428D00ED683A /* Sources */,
+				0D60404C2841428D00ED683A /* Frameworks */,
+				0D60404D2841428D00ED683A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EDGameEngine_iOS;
+			productName = EDGameEngine_iOS;
+			productReference = 0D60404F2841428D00ED683A /* EDGameEngine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0D6040572841428E00ED683A /* EDGameEngine_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D6040652841428E00ED683A /* Build configuration list for PBXNativeTarget "EDGameEngine_iOSTests" */;
+			buildPhases = (
+				0D6040542841428E00ED683A /* Sources */,
+				0D6040552841428E00ED683A /* Frameworks */,
+				0D6040562841428E00ED683A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D60405B2841428E00ED683A /* PBXTargetDependency */,
+			);
+			name = EDGameEngine_iOSTests;
+			productName = EDGameEngine_iOSTests;
+			productReference = 0D6040582841428E00ED683A /* EDGameEngine_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0DB0E45D281C3FCD004A25B2 /* EDGameEngine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB0E472281C3FCD004A25B2 /* Build configuration list for PBXNativeTarget "EDGameEngine" */;
@@ -156,9 +233,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					0D60404E2841428D00ED683A = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					0D6040572841428E00ED683A = {
+						CreatedOnToolsVersion = 13.4;
+					};
 					0DB0E45D281C3FCD004A25B2 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -183,11 +266,27 @@
 			targets = (
 				0DB0E45D281C3FCD004A25B2 /* EDGameEngine */,
 				0DB0E467281C3FCD004A25B2 /* EDGameEngineTests */,
+				0D60404E2841428D00ED683A /* EDGameEngine_iOS */,
+				0D6040572841428E00ED683A /* EDGameEngine_iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D60404D2841428D00ED683A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6040562841428E00ED683A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB0E45C281C3FCD004A25B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +304,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D60404B2841428D00ED683A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D60406E2841441800ED683A /* Result.swift in Sources */,
+				0D60406F2841441800ED683A /* Flow.swift in Sources */,
+				0D60406C2841441800ED683A /* Router.swift in Sources */,
+				0D60406D2841441800ED683A /* Game.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6040542841428E00ED683A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D6040692841440800ED683A /* GameTests.swift in Sources */,
+				0D60406A2841440800ED683A /* RouterSpy.swift in Sources */,
+				0D60406B2841440800ED683A /* FlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB0E45A281C3FCD004A25B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +350,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D60405B2841428E00ED683A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D60404E2841428D00ED683A /* EDGameEngine_iOS */;
+			targetProxy = 0D60405A2841428E00ED683A /* PBXContainerItemProxy */;
+		};
 		0DB0E46B281C3FCD004A25B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0DB0E45D281C3FCD004A25B2 /* EDGameEngine */;
@@ -238,6 +363,110 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0D6040602841428E00ED683A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3AMS94597U;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyegah.EDGameEngine-iOS";
+				PRODUCT_NAME = EDGameEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D6040612841428E00ED683A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3AMS94597U;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyegah.EDGameEngine-iOS";
+				PRODUCT_NAME = EDGameEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D6040622841428E00ED683A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AMS94597U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyegah.EDGameEngine-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D6040632841428E00ED683A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AMS94597U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyegah.EDGameEngine-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		0DB0E470281C3FCD004A25B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,6 +694,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D6040642841428E00ED683A /* Build configuration list for PBXNativeTarget "EDGameEngine_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D6040602841428E00ED683A /* Debug */,
+				0D6040612841428E00ED683A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D6040652841428E00ED683A /* Build configuration list for PBXNativeTarget "EDGameEngine_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D6040622841428E00ED683A /* Debug */,
+				0D6040632841428E00ED683A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0DB0E458281C3FCD004A25B2 /* Build configuration list for PBXProject "EDGameEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
